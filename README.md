@@ -1,27 +1,27 @@
 # libft
 
 PART1 (Libc functions)
-1.isalpha
-2.isdigit
-3.isalnum
-4.isascii
-5.isprint
-6.strlen
-7.memset
-8.bzero
-9.memcpy
-10.memmove
-11.strlcpy
-12.strlcat
-13.toupper
-14.tolower
-15.strchr
-16.strrchr
-17.strncmp
-18.memchr
-19.memcmp
-20.strnstr
-21.atoi
+1. isalpha
+2. isdigit
+3. isalnum
+4. isascii
+5. isprint
+6. strlen
+7. memset
+8. bzero
+9. memcpy
+10. memmove
+11. strlcpy
+12. strlcat
+13. toupper
+14. tolower
+15. strchr
+16. strrchr
+17. strncmp
+18. memchr
+19. memcmp
+20. strnstr
+21. atoi
 22. calloc (malloc)
 23. strdup (malloc)
 
