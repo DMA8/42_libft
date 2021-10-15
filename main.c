@@ -4,16 +4,13 @@
 #include <string.h>
 
 
-
-char *ft_strnstr (const char *big_str, const char *little_str, size_t len);
-void *ft_memset(void *s, int c, size_t n);
-int ft_isascii(const char s);
-int ft_isprint(char s);
+size_t ft_strlcpy(char *dst, const char *src, size_t nbytes);
+size_t ft_strlcat(char *dst, const char *src, size_t nbytes);
 
 int main()
 {
-    char *str = "ABOBA";
-    printf("%c\n", str[0]);
-    ft_memset(str, 'a', 1);
-    //printf("%c\n", str[0]);
+    unsigned char src[5] = {'a', 'b', 'c', 'd', 0};
+    unsigned char dest[3] = {'e', 'f', 0};
+    printf("%d\n", ft_strlcat(dest, src, 2));
+    printf("%c, %c, %c, %c, %c, %c", dest[0], dest[1], dest[2], dest[3], dest[4], dest[5]);
 }
