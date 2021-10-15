@@ -12,41 +12,33 @@ static int  ft_strlen(const char *str)
 }
 
 
-char *ft_strnstr (const char *big_str, const char *little_str, size_t len)
+char *ft_strnstr (const char *src_str, const char *goal_str, size_t len)
 {
-    unsigned int  ind;
-    unsigned int  sub_ind;
-    unsigned int  common_char_counter;
-    unsigned int  len_little_string;
-    char *  ptr_answer;
-   // printf("HI\n");
-    ind = 0;
-    len_little_string = (unsigned int)ft_strlen(little_str);
-    sub_ind = 0;
-    
-    if (len > ft_strlen(big_str))
-        len = ft_strlen(big_str);
-   
-    while (ind < len - len_little_string + 1)
-    {
+    int len_goal_str;
+    int len_src_str;
+    int ind_src;
+    int ind_goal;
+    int common_letters;
 
-        while (sub_ind < len_little_string )
+    len_goal_str = ft_strlen(goal_str);
+    len_src_str = ft_strlen(src_str);
+    ind_src = 0;
+    ind_goal = 0;
+    common_letters = 0;
+    if ((int)len > len_src_str)
+        len = (size_t)len_src_str;
+    while (ind_src < (int)len)
+    {        
+        while (src_str[ind_src + ind_goal] == goal_str[ind_goal])
         {
-            printf("sub_ind = %d ind = %d\n", sub_ind, ind);
-            if (big_str[ind + sub_ind] == little_str[sub_ind])
-            {
-                printf("first  letter is coincided! it's %d\n", ind + sub_ind ); 
-                break;        
-            }
-                
-            if (common_char_counter == len_little_string)
-                return (void*)big_str + ind;
-            common_char_counter++;
-            sub_ind++;          
+            common_letters++;
+            ind_goal++;
+            if (common_letters == len_goal_str && ind_src + ind_goal <= (int)len)
+                return ((void *)src_str + ind_src);
         }
-        ind++;
-        sub_ind = 0;
-        common_char_counter = 0;
-    } 
+        ind_goal = 0;
+        common_letters = 0;
+        ind_src++;
+    }    
     return (NULL);
 }
