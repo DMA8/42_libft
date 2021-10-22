@@ -11,7 +11,7 @@ char    *ft_strrchr(const char *src_str, int  char_to_find)
             return ((char *)src_str + ind);
         ind--;
     }
-    return ((char *)src_str + ft_strlen(src_str));
+    return ((char *)src_str + ind + 1);
     
 }
 

@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static int  ft_char_in_set(char chr, char const *set)
+static int  ft_char_in_set(char chr, const char *set)
 {
     int     ind;
 
@@ -15,7 +15,7 @@ static int  ft_char_in_set(char chr, char const *set)
     return (0);
 }
 
-static int  get_start_ind_trimmed(char const *str, char const *set)
+static int  get_start_ind_trimmed(const char *str, const char *set)
 {
     int ind;
 
@@ -25,7 +25,7 @@ static int  get_start_ind_trimmed(char const *str, char const *set)
     return (ind);
 }
 
-static int  get_end_ind_trimmed(char const *str, char const *set)
+static int  get_end_ind_trimmed(const char *str, const char *set)
 {
     int ind;
 
@@ -35,12 +35,12 @@ static int  get_end_ind_trimmed(char const *str, char const *set)
     return (ind);
 }
 
-char    *ft_strtrim(char const *s1, char const *set)
+char    *ft_strtrim(const char *s1, const char *set)
 {
     size_t  start_ind_trimmed;
     size_t  end_ind_trimmed;
     char    *ans;
-    char    ind;
+    int    ind;
 
     ind = 0;
     start_ind_trimmed = (size_t)get_start_ind_trimmed(s1, set);
@@ -50,7 +50,7 @@ char    *ft_strtrim(char const *s1, char const *set)
         return (NULL);
     while (start_ind_trimmed <= end_ind_trimmed)
     {
-        ans[ind] = s1[start_ind_trimmed];
+        ans[ind]  = s1[start_ind_trimmed];
         start_ind_trimmed++;
         ind++;
     }

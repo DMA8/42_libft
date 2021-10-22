@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
 
@@ -20,16 +19,16 @@ static int      ft_count_words(char const *s, char c)
 {
     int ind;
     int nwords;
-    int strlen;
+    int stringlen;
 
     nwords = 0;
     ind = 0;
-    strlen = ft_strlen((const)s);
+    stringlen = ft_strlen(s);
     if (s[0] != c)
         nwords++;
-    while (ind < strlen)
+    while (ind < stringlen)
     {
-        if (s[ind] != c && (s[ind + 1] == c || s[ind + 1] == 0) || s[ind] == c && s[ind + 1] != c)
+        if ((s[ind] != c && s[ind + 1] == c) || s[ind + 1] == 0 || (s[ind] == c && s[ind + 1] != c))
             nwords++;
         ind++;
     }
@@ -69,13 +68,10 @@ char            **ft_split(char const *s, char c)
     char    **ans;
     int     nwords_in_str;
     int     start;
-    int     size;
     int     nwords_extracted;
-    int     ind;
 
     nwords_extracted = 0;
     start = 0;
-    ind = 0;
     nwords_in_str = ft_count_words(s, c);
     ans = (char **)malloc((nwords_in_str + 1) * sizeof(char *));
     if (ans == NULL)

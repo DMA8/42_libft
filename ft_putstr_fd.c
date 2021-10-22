@@ -8,7 +8,7 @@ void    ft_putstr_fd(char *s, int fd)
     ind = 0;
     while(s[ind])
     {
-        write(fd, s[ind], 1);
+        write(fd, (void*) &s[ind], 1);
         ind++;
     }
 }

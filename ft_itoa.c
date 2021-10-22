@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-const int   get_n_digits_in_int(int n)
+static int   get_n_digits_in_int(int n)
 {
     int     ndigits;
     int     delimiter;
@@ -22,7 +22,7 @@ const int   get_n_digits_in_int(int n)
     return (ndigits + 1);
 }
 
-const int   get_starting_delimiter(int n)
+static int   get_starting_delimiter(int n)
 {
     int delimiter;
 
