@@ -1,15 +1,12 @@
-#include "libft.h"
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-char    **ft_split(char const *s, char c);
 
-int main()
+int     main()
 {
-    char *s1 = "Valeriy Albertovich";
-    char **res;
+    char p[17];
 
-    res = ft_split(s1, ' ');
-    printf("%s\n",res);
+    printf("%d\n", itoa(-2200000000, p, 17));
+    
 }
