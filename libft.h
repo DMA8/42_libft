@@ -3,14 +3,14 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int ft_strlen(const char *s);
-char *ft_itoa(int n);
+int     ft_strlen(const char *s);
+char    *ft_itoa(int n);
 int     ft_atoi(const char *s);
 void    ft_bzero(void *dest, size_t nbytes);
 void    *calloc(size_t nmemb, size_t size);
 int     ft_isalnum(char c);
 int     ft_isalpha(int c);
-int     ft_isascii(const char s);
+int     ft_isascii(int c);
 int     ft_isdigit(int c);
 int     ft_isprint(char s);
 void    *ft_memchr(const void *str, int c, size_t n);
