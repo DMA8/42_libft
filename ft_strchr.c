@@ -1,3 +1,5 @@
+#include "libft.h"
+
 char    *ft_strchr(const char *src_str, int  char_to_find)
 {
     int     ind;

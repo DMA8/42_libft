@@ -1,7 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
-static void *ft_free_if_malloc_fail(char  **ptr)
+
+static void     *ft_free_if_malloc_fail(char  **ptr)
 {
     int ind;
 
@@ -13,16 +15,8 @@ static void *ft_free_if_malloc_fail(char  **ptr)
     }
     return (NULL);
 }
-static  int ft_strlen(char const *s)
-{
-    int len;
-    
-    len = 0;
-    while(s[len])
-        len++;
-    return (len);
-}
-static int  ft_count_words(char const *s, char c)
+
+static int      ft_count_words(char const *s, char c)
 {
     int ind;
     int nwords;
@@ -30,7 +24,7 @@ static int  ft_count_words(char const *s, char c)
 
     nwords = 0;
     ind = 0;
-    strlen = ft_strlen(s);
+    strlen = ft_strlen((const)s);
     if (s[0] != c)
         nwords++;
     while (ind < strlen)
@@ -41,7 +35,7 @@ static int  ft_count_words(char const *s, char c)
     }
     return (nwords / 2);
 }
-static char *ft_extract_word(char const *str, char delimiter, int *start_index, char **to_free)
+static char     *ft_extract_word(char const *str, char delimiter, int *start_index, char **to_free)
 {
     int     word_len;
     int     word_start_ind;
@@ -70,7 +64,7 @@ static char *ft_extract_word(char const *str, char delimiter, int *start_index, 
     }
     return (word_to_put);   
 }
-char    **ft_split(char const *s, char c)
+char            **ft_split(char const *s, char c)
 {
     char    **ans;
     int     nwords_in_str;

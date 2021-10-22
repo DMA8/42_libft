@@ -1,15 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
-static int ft_strlen(const char *str)
-{
-    int ind;
-
-    ind = 0;
-    while (str[ind])
-        ind++;
-    return (ind);
-}
 
 static  int minInt(int a, int b)
 {
@@ -17,7 +9,6 @@ static  int minInt(int a, int b)
         return (a);
     return (b);
 }
-
 
 int ft_strncmp(const char *str1, const char *str2, size_t n)
 {

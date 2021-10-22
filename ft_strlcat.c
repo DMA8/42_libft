@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
+
 static size_t ft_strlen(const char* str)
 {
     size_t  len;
@@ -10,7 +12,7 @@ static size_t ft_strlen(const char* str)
     return (len);
 }
 
-size_t ft_strlcat(char *dst, const char *src, size_t nbytes)
+size_t      ft_strlcat(char *dst, const char *src, size_t nbytes)
 {
     size_t  len_dst;
     size_t  len_src;
@@ -27,6 +29,5 @@ size_t ft_strlcat(char *dst, const char *src, size_t nbytes)
         ind++; 
     }
     dst[len_dst + ind] = 0;
-    return (len_dst + ind);
-    
+    return (len_dst + ind); 
 }

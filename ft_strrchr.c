@@ -1,13 +1,4 @@
-#include <stdio.h>
-static int ft_strlen(const char *src_str)
-{
-    int ind;
-
-    ind = 0;
-    while(src_str[ind])
-        ind++;
-    return (ind);
-}
+#include "libft.h"
 
 char    *ft_strrchr(const char *src_str, int  char_to_find)
 {

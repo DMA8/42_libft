@@ -1,19 +1,7 @@
 #include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-static size_t   ft_strlen(const char *str)
-{
-    size_t len;
-
-    len = 0;
-    while (str[len])
-    {
-        len++;
-    }
-    return (len);
-}
-
-static  int ft_char_in_set(char chr, char const *set)
+static int  ft_char_in_set(char chr, char const *set)
 {
     int     ind;
 
@@ -27,7 +15,7 @@ static  int ft_char_in_set(char chr, char const *set)
     return (0);
 }
 
-static  int get_start_ind_trimmed(char const *str, char const *set)
+static int  get_start_ind_trimmed(char const *str, char const *set)
 {
     int ind;
 
@@ -37,7 +25,7 @@ static  int get_start_ind_trimmed(char const *str, char const *set)
     return (ind);
 }
 
-static  int get_end_ind_trimmed(char const *str, char const *set)
+static int  get_end_ind_trimmed(char const *str, char const *set)
 {
     int ind;
 
@@ -47,7 +35,7 @@ static  int get_end_ind_trimmed(char const *str, char const *set)
     return (ind);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char    *ft_strtrim(char const *s1, char const *set)
 {
     size_t  start_ind_trimmed;
     size_t  end_ind_trimmed;

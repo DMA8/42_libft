@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include "libft.h"
+
 void ft_bzero(void *dest, size_t nbytes)
 {
     size_t  ind;

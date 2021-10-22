@@ -1,15 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
-static int  ft_strlen(const char *str)
-{
-    int len;
-
-    len = 0;
-    while (str[len])
-        len++;
-    return (len);
-}
+#include "libft.h"
 
 
 char *ft_strnstr (const char *src_str, const char *goal_str, size_t len)

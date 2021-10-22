@@ -1,4 +1,6 @@
-void ft_putnbr_fd(int n, int fd)
+#include "libft.h"
+
+void    ft_putnbr_fd(int n, int fd)
 {
     char *int_as_chars;
     int     bufsize;

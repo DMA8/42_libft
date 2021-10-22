@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include "libft.h"
+
 
 static size_t   ft_strlen(const char *str)
 {
