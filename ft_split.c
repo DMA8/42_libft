@@ -1,7 +1,20 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static int	ft_count_words(char const *s, char c)
+static void	if_fail_free(char **to_free)
+{
+	int	ind;
+
+	ind = 0;
+	while (to_free[ind])
+	{
+		free(to_free[ind]);
+		ind++;
+	}
+	free(to_free);
+}
+
+static int	cnt_wrds(char const *s, char c)
 {
 	int	ind;
 	int	word_conter;
@@ -20,7 +33,7 @@ static int	ft_count_words(char const *s, char c)
 	return (word_conter);
 }
 
-static char	*ft_extract_word(char const *s, int n)
+static char	*get_word(char const *s, int n, char **to_free)
 {
 	char	*extracted_word;
 	int		ind;
@@ -28,7 +41,10 @@ static char	*ft_extract_word(char const *s, int n)
 	ind = 0;
 	extracted_word = (char *)malloc(sizeof(char) * n + 1);
 	if (extracted_word == NULL)
+	{
+		if_fail_free(to_free);
 		return (NULL);
+	}
 	while (ind < n)
 	{
 		extracted_word[ind] = s[ind];
@@ -41,29 +57,28 @@ static char	*ft_extract_word(char const *s, int n)
 char	**ft_split(char const *s, char c)
 {
 	int		ind;
-	int		word_ind_start;
-	int		num_word_splitted;
-	char	**splitted_words;
+	int		sind;
+	int		nwrd;
+	char	**splt;
 
 	ind = 0;
-	num_word_splitted = 0;
-	splitted_words = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (splitted_words == NULL)
+	nwrd = 0;
+	splt = (char **)malloc(sizeof(char *) * (cnt_wrds(s, c) + 1));
+	if (splt == NULL)
 		return (NULL);
 	while (s[ind])
 	{
 		while (s[ind] == c)
 			ind++;
-		word_ind_start = ind;
+		sind = ind;
 		while (s[ind] && s[ind] != c)
 			ind++;
-		if (ind > word_ind_start)
+		if (ind > sind)
 		{
-			splitted_words[num_word_splitted] = \
-			ft_extract_word(s + word_ind_start, ind - word_ind_start);
-			num_word_splitted++;
+			splt[nwrd] = get_word(s + sind, ind - sind, splt);
+			nwrd++;
 		}
 	}
-	splitted_words[num_word_splitted] = NULL;
-	return (splitted_words);
+	splt[nwrd] = NULL;
+	return (splt);
 }
