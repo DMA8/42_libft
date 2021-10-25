@@ -1,11 +1,21 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
+
+char	**ft_split(char const *s, char const d);
 
 int     main()
 {
+	char *test = "*hello**mahmudul***hasan**";
+	char **ans;
+	
+	ans = ft_split(test, '*');
 
-    printf("%d\n", ft_isalnum('1'));
-    
+	int ind = 0;
+
+	while (ans[ind])
+	{
+		printf("ind = %d str =  %s\n", ind, ans[ind]);
+		ind++;
+	}    
 }
