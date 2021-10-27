@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: syolando <syolando@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/27 12:22:13 by syolando          #+#    #+#             */
+/*   Updated: 2021/10/27 13:22:13 by syolando         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	char *	mapped_str;
+	char	*mapped_str;
 	int		ind;
 
 	if (!s || !f)

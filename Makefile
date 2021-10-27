@@ -1,3 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: syolando <syolando@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/10/27 12:23:10 by syolando          #+#    #+#              #
+#    Updated: 2021/10/27 15:10:12 by syolando         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 	
 SRCS			=	ft_bzero.c ft_calloc.c ft_itoa.c ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c ft_strlen.c \
@@ -14,25 +25,27 @@ BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
 					ft_lstmap.c ft_lstnew.c ft_lstsize.c
 BONUS_OBJS		= $(BONUS:.c=.o)
 
-CC				= gcc
+CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+CFLAGS			= -Wall -Wextra -Werror
 
 NAME			= libft.a
 
 
 
-all:			$(NAME)
+#all:			$(NAME)
 
-so:
-	$(CC) -fPIC $(CFLAGS) $(SRC)
-	gcc -shared -o libft.so $(OBJ)
-
-
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+#$(NAME):		$(OBJS) libft.h
+#				ar rcs $(NAME) $(OBJS) $?
 
 
+all: $(NAME)
+
+$(NAME): $(OBJS) libft.h
+		ar rcs $(NAME) $?
+
+.c.o: $(SRCS)
+		$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 				$(RM) $(OBJS) $(BONUS_OBJS)

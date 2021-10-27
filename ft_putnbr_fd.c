@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: syolando <syolando@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/27 12:20:54 by syolando          #+#    #+#             */
+/*   Updated: 2021/10/27 13:26:22 by syolando         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <unistd.h>
 #include <stdio.h>
 
-static void str_int(int n, char *int_as_chars)
+static void	str_int(int n, char *int_as_chars)
 {
 	int			delim;
 	int			ind;
@@ -15,7 +27,7 @@ static void str_int(int n, char *int_as_chars)
 	{
 		ind++;
 		nn *= -1;
-		int_as_chars[0] = '-';		
+		int_as_chars[0] = '-';
 	}
 	while (!(nn / delim))
 		delim /= 10;

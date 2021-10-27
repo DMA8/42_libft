@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: syolando <syolando@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/27 12:21:29 by syolando          #+#    #+#             */
+/*   Updated: 2021/10/27 12:21:29 by syolando         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include "libft.h"
 
@@ -54,6 +66,15 @@ static char	*get_word(char const *s, int n, char **to_free)
 	return (extracted_word);
 }
 
+static int	init(int *a, int *b, char const *s)
+{
+	*a = 0;
+	*b = 0;
+	if (!s)
+		return (0);
+	return (1);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		ind;
@@ -61,8 +82,8 @@ char	**ft_split(char const *s, char c)
 	int		nwrd;
 	char	**splt;
 
-	ind = 0;
-	nwrd = 0;
+	if (!init(&ind, &nwrd, s))
+		return (NULL);
 	splt = (char **)malloc(sizeof(char *) * (cnt_wrds(s, c) + 1));
 	if (splt == NULL)
 		return (NULL);

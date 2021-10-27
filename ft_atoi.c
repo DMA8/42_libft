@@ -1,4 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: syolando <syolando@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/27 12:17:08 by syolando          #+#    #+#             */
+/*   Updated: 2021/10/27 12:17:08 by syolando         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 static int	ft_isspace(const char c)
 {
@@ -8,15 +22,20 @@ static int	ft_isspace(const char c)
 	return (0);
 }
 
+static void	init(int *a, long *b, long *c)
+{
+	*a = 0;
+	*b = 1;
+	*c = 0;
+}
+
 int	ft_atoi(const char *s)
 {
-	int	str_index;
-	int	sign;
-	int	result;
+	int		str_index;
+	long	sign;
+	long	result;
 
-	str_index = 0;
-	sign = 1;
-	result = 0;
+	init(&str_index, &sign, &result);
 	while (ft_isspace(s[str_index]))
 		str_index++;
 	if (s[str_index] == '-')
@@ -24,12 +43,12 @@ int	ft_atoi(const char *s)
 		str_index++;
 		sign = -1;
 	}
-	else if (s[str_index] == '+') 
+	else if (s[str_index] == '+')
 		str_index++;
 	while (s[str_index] >= '0' && s[str_index] <= '9')
 	{
 		result = (result * 10) + (s[str_index] - '0');
 		str_index++;
 	}
-	return (result * sign);
+	return ((int)result * sign);
 }

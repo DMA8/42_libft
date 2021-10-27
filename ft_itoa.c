@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: syolando <syolando@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/27 12:18:17 by syolando          #+#    #+#             */
+/*   Updated: 2021/10/27 13:25:31 by syolando         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -51,7 +63,6 @@ static void	fill_ans(char *ans, int delim, int ind, long nn)
 	}
 	ans[ind] = 0;
 }
-
 
 char	*ft_itoa(int n)
 {

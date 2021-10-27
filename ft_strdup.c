@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: syolando <syolando@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/27 12:21:38 by syolando          #+#    #+#             */
+/*   Updated: 2021/10/27 12:21:38 by syolando         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include "libft.h"
 
-char *	ft_strdup(const char*str)
+char	*ft_strdup(const char *str)
 {
-	char *	ans;
+	char	*ans;
 	int		len_src;
 	int		ind;
 

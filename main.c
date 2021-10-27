@@ -2,20 +2,11 @@
 #include <string.h>
 #include <stdio.h>
 
-char	**ft_split(char const *s, char const d);
+char	*ft_strtrim(char const *s1, char const *set);
 
 int     main()
 {
-	char *test = "*hello**mahmudul***hasan**";
-	char **ans;
+	char s1[] = "          ";
+	printf("%s\n", ft_strtrim(s1, " "));
 	
-	ans = ft_split(test, '*');
-
-	int ind = 0;
-
-	while (ans[ind])
-	{
-		printf("ind = %d str =  %s\n", ind, ans[ind]);
-		ind++;
-	}    
 }
