@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
 
-static void	if_fail_free(char **to_free)
+static void	free_if_fail(char **to_free)
 {
 	int	ind;
 
@@ -54,7 +53,7 @@ static char	*get_word(char const *s, int n, char **to_free)
 	extracted_word = (char *)malloc(sizeof(char) * n + 1);
 	if (extracted_word == NULL)
 	{
-		if_fail_free(to_free);
+		free_if_fail(to_free);
 		return (NULL);
 	}
 	while (ind < n)

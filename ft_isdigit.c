@@ -6,11 +6,9 @@
 /*   By: syolando <syolando@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 12:18:03 by syolando          #+#    #+#             */
-/*   Updated: 2021/10/27 18:25:18 by syolando         ###   ########.fr       */
+/*   Updated: 2021/11/10 17:51:07 by syolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {

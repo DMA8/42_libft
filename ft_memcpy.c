@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
 
 void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t nbytes)
 {

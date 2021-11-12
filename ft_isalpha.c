@@ -6,11 +6,9 @@
 /*   By: syolando <syolando@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 12:17:44 by syolando          #+#    #+#             */
-/*   Updated: 2021/10/27 18:24:18 by syolando         ###   ########.fr       */
+/*   Updated: 2021/11/10 17:50:55 by syolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isalpha(int c)
 {	

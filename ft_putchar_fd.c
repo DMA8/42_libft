@@ -6,11 +6,10 @@
 /*   By: syolando <syolando@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 12:20:36 by syolando          #+#    #+#             */
-/*   Updated: 2021/10/27 12:20:39 by syolando         ###   ########.fr       */
+/*   Updated: 2021/11/10 17:54:54 by syolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd)

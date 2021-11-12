@@ -6,12 +6,10 @@
 /*   By: syolando <syolando@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 12:18:17 by syolando          #+#    #+#             */
-/*   Updated: 2021/10/27 13:25:31 by syolando         ###   ########.fr       */
+/*   Updated: 2021/11/10 17:51:35 by syolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 static int	get_n_digits_in_int(long n)
@@ -34,7 +32,7 @@ static int	get_n_digits_in_int(long n)
 	return (ndigits + 1);
 }
 
-static int	get_starting_delimiter(long n)
+static int	get_start_delim(long n)
 {
 	int	delimiter;
 
@@ -73,7 +71,7 @@ char	*ft_itoa(int n)
 
 	ind = 0;
 	nn = n;
-	start_delimiter = get_starting_delimiter(nn);
+	start_delimiter = get_start_delim(nn);
 	ans = (char *)malloc((get_n_digits_in_int(nn) + 1) * sizeof(char));
 	if (!ans)
 		return (NULL);

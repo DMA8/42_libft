@@ -22,8 +22,10 @@ char	*ft_substr(char const *src, unsigned int start, size_t len)
 	if (!src)
 		return (NULL);
 	ind = 0;
+	if (len > (size_t)(ft_strlen(src)))
+		len = (size_t)(ft_strlen(src));
 	bcopied = 0;
-	dest = (char *)malloc(sizeof(char) * (len + 1));
+	dest = (char *)malloc(sizeof(char) * len + 1);
 	if (!dest)
 		return (NULL);
 	while (src[ind])
@@ -35,6 +37,6 @@ char	*ft_substr(char const *src, unsigned int start, size_t len)
 		}
 		ind++;
 	}
-	dest[bcopied] = '\0';
+	dest[bcopied] = 0;
 	return (dest);
 }

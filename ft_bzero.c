@@ -9,9 +9,7 @@
 /*   Updated: 2021/10/27 12:17:18 by syolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stdlib.h>
-#include "libft.h"
 
 void	ft_bzero(void *dest, size_t nbytes)
 {
